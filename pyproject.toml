@@ -9,5 +9,5 @@ authors = [
   { name = "Leslie Cuadra" }
 ]
 
-[tool.setuptools]
-packages = ["trer", "trer.core"]
+[tool.setuptools.packages.find]
+include = ["trer*"]

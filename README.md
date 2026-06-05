@@ -10,60 +10,96 @@ The near-term goal is to build a small, deterministic core before extending plug
 
 This invariant is the anchor for the project. Falcon Vision, GEPA-viz, LLMs, and domain plugins may improve or visualize the workflow, but the core engine must remain independently testable and explainable.
 
-## Initial Development Strategy
+## Design Pressure
 
-1. **Commit the seed state**
-   - Keep the initial repo structure and intent under version control.
-   - Make every structural change traceable.
+TRER is expanding conceptually toward:
 
-2. **Define the core contract before implementation**
-   - Start with a minimal data model:
-     - `Entity`
-     - `Event`
-     - `Relationship`
-     - `Observation`
-     - `Hypothesis`
-     - `Timeline`
-   - Decide what TRER accepts and emits before binding it to Falcon Vision, GEPA-viz, or any other tool.
+```text
+Pressure
+  ↓
+Routing
+  ↓
+Dissipation
+  ↓
+State Transition
+```
 
-3. **Build the deterministic core first**
-   - No model calls.
-   - No plugins.
-   - No visualizers.
-   - First target: observations → events → relationships → timeline/hypotheses.
+That is useful as an analytical frame, but the software core should stay narrow. Pressure tracking, ambiguity routing, and domain-specific interpretation should be expressed through fixtures and prisms until the core has earned more abstraction.
 
-4. **Add tests immediately**
-   - Use small, human-readable fixtures.
-   - Early test cases should include:
-     - two detections over time becoming a movement event
-     - object A near object B creating a spatial relationship
-     - contradictory observations producing competing hypotheses
-
-5. **Add adapters/plugins only after the core passes tests**
-   - Falcon Vision adapter: convert detections into TRER observations.
-   - GEPA-viz adapter: render hypothesis/evaluation traces.
-   - Domain prisms: criminology, biology, markets, genealogy, infrastructure, civilization, clerical, etc.
-
-## Proposed Project Structure
+## Core Shape
 
 ```text
 trer/
-│
 ├── core/
-│   ├── compression.py
-│   ├── decompression.py
-│   ├── event_graph.py
-│   ├── timeline_builder.py
-│   └── narrative_reconstructor.py
+│   ├── nodes.py           # entities and observations
+│   ├── edges.py           # relationships
+│   ├── events.py          # reconstructed state changes
+│   ├── timelines.py       # timelines and hypotheses
+│   └── reconstruction.py  # deterministic transforms over plain JSON-compatible input
 │
-├── prisms/
-│   ├── genealogy/
-│   ├── criminology/
-│   ├── markets/
-│   ├── infrastructure/
-│   ├── civilization/
-│   ├── clerical/
-│   └── biology/
-│
-└── outputs/
+└── prisms/
+    ├── perception/        # Falcon Vision-style observations
+    ├── workflow/          # Pixel Office-style queues/tasks/state
+    ├── market/            # Gamma Reflexivity-style market pressure timelines
+    ├── inventory/         # inventory reconciliation and queue growth
+    ├── criminology/       # burglary-ring timelines and uncertainty scoring
+    ├── infrastructure/    # dependency/failure investigation timelines
+    └── narrative/         # human-readable explanations
+```
+
+Compatibility modules `trer.core.models` and `trer.core.reconstructor` remain available while the layout stabilizes.
+
+## Initial Development Strategy
+
+1. **Keep the core deterministic**
+   - No model calls.
+   - No required plugins.
+   - No visualizer dependency.
+   - First target: observations → events → relationships → timeline/hypotheses.
+
+2. **Define behavior with fixtures**
+   - Use small, human-readable JSON fixtures.
+   - Every new abstraction should be justified by a fixture and a test.
+
+3. **Let prisms adapt domains, not redefine core**
+   - Falcon Vision becomes a perception prism.
+   - Pixel Office becomes a workflow prism.
+   - Gamma Reflexivity becomes a market prism.
+   - Critical Dependency Observatory becomes an infrastructure prism.
+
+4. **Add adapters only after core tests pass**
+   - Falcon Vision adapter: convert detections into TRER observations.
+   - GEPA-viz adapter: render hypothesis/evaluation traces.
+   - Domain prisms: inventory, criminology, market, infrastructure, workflow, narrative, etc.
+
+## Candidate Demo Paths
+
+These demos should exercise the same core engine from different prism angles:
+
+- **Starbucks Inventory Test**
+  - ambiguity routing
+  - inventory reconciliation
+  - queue growth
+
+- **Burglary Ring Timeline**
+  - TRER reconstruction
+  - temporal linking
+  - uncertainty scoring
+
+- **SPY Reflexivity Timeline**
+  - news event
+  - options pressure
+  - price response
+  - post-event dissipation
+
+- **Building Failure Investigation**
+  - maintenance events
+  - inspections
+  - ownership changes
+  - rupture event
+
+## Current Test Gate
+
+```bash
+python3 -m unittest discover -s tests -v
 ```
