@@ -1,6 +1,6 @@
-"""Placeholder prism package.
+"""Market prism.
 
-This prism intentionally contains no runtime behavior yet. Add adapters only
-after the deterministic TRER core has fixture-backed tests for the behavior the
-prism needs.
+The market prism adapts market microstructure, option quotes, and trader thesis
+state into TRER-style reconstruction experiments. It is intentionally separate
+from the domain-agnostic core.
 """

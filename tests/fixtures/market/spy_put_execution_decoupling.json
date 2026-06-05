@@ -1,0 +1,40 @@
+{
+  "position": {
+    "symbol": "SPY put contract",
+    "option_type": "put",
+    "entry_price": 0.23,
+    "quantity": 2,
+    "multiplier": 100
+  },
+  "stop_rule": {
+    "stop_price": 0.50,
+    "trigger_field": "bid",
+    "order_type": "stop_market"
+  },
+  "frames": [
+    {
+      "timestamp": "2026-06-05T10:01:00-07:00",
+      "underlying_price": 751.50,
+      "bid": 0.58,
+      "ask": 0.60,
+      "thesis_valid": true,
+      "label": "tight spread; trade survives"
+    },
+    {
+      "timestamp": "2026-06-05T10:02:00-07:00",
+      "underlying_price": 750.80,
+      "bid": 0.49,
+      "ask": 0.80,
+      "thesis_valid": true,
+      "label": "spread expansion; bid-triggered stop fires"
+    },
+    {
+      "timestamp": "2026-06-05T10:03:00-07:00",
+      "underlying_price": 750.50,
+      "bid": 0.80,
+      "ask": 0.85,
+      "thesis_valid": true,
+      "label": "bid recovers after false stop"
+    }
+  ]
+}

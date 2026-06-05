@@ -10,7 +10,7 @@ They should **not** become load-bearing dependencies of the core engine.
 
 - `perception/` — Falcon Vision-style detections and visual observations.
 - `workflow/` — Pixel Office-style coordination, task flow, and queue state.
-- `market/` — Gamma Reflexivity-style price/news/options pressure timelines.
+- `market/` — Gamma Reflexivity-style price/news/options pressure timelines, including execution-decoupling simulations.
 - `inventory/` — Starbucks-style reconciliation, queue growth, and ambiguity routing.
 - `criminology/` — burglary-ring timelines, temporal linking, uncertainty scoring.
 - `infrastructure/` — Critical Dependency Observatory-style maintenance, inspection, ownership, and failure events.
