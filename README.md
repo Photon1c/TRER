@@ -24,7 +24,7 @@ Dissipation
 State Transition
 ```
 
-That is useful as an analytical frame, but the software core should stay narrow. Pressure tracking, ambiguity routing, and domain-specific interpretation should be expressed through fixtures and prisms until the core has earned more abstraction.
+This pressure-routing-dissipation-transition model is a useful analytical frame; however, the software core must remain narrow. Pressure tracking, ambiguity routing, and domain-specific interpretation should be expressed through fixtures and prisms until the core has earned more abstraction.
 
 ## Core Shape
 
