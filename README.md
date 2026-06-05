@@ -90,7 +90,8 @@ These demos should exercise the same core engine from different prism angles:
   - news event
   - options pressure
   - price response
-  - execution decoupling / false stop events
+  - execution decoupling / `BID_SPREAD_FALSE_STOP` events
+  - false-stop cost / missed P&L
   - post-event dissipation
 
 - **Building Failure Investigation**

@@ -6,20 +6,34 @@ from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from .execution_decoupling import (
+        BID_SPREAD_FALSE_STOP,
+        SPREAD_RISK_THRESHOLD,
         BrokerStopRule,
         OptionQuoteFrame,
+        PolicyComparison,
+        PolicyOutcome,
         Position,
         SimulationResult,
+        StopPolicy,
         StopTriggerEvent,
+        compare_stop_policies,
+        default_policy_suite,
         simulate_stop_execution,
     )
 
 _EXPORTS = {
+    "BID_SPREAD_FALSE_STOP",
+    "SPREAD_RISK_THRESHOLD",
     "BrokerStopRule",
     "OptionQuoteFrame",
+    "PolicyComparison",
+    "PolicyOutcome",
     "Position",
     "SimulationResult",
+    "StopPolicy",
     "StopTriggerEvent",
+    "compare_stop_policies",
+    "default_policy_suite",
     "simulate_stop_execution",
 }
 
