@@ -1,0 +1,22 @@
+{
+  "observations": [
+    {
+      "id": "obs-001",
+      "entity_id": "entity-red-ball",
+      "label": "red ball",
+      "observed_at": "2026-06-05T10:00:00Z",
+      "location": [10, 20],
+      "confidence": 0.98,
+      "source": "fixture"
+    },
+    {
+      "id": "obs-002",
+      "entity_id": "entity-red-ball",
+      "label": "red ball",
+      "observed_at": "2026-06-05T10:00:05Z",
+      "location": [18, 24],
+      "confidence": 0.97,
+      "source": "fixture"
+    }
+  ]
+}

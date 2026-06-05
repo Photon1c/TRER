@@ -1,0 +1,13 @@
+[project]
+name = "trer"
+version = "0.1.0"
+description = "Temporal Relational Event Reconstruction core engine"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Leslie Cuadra" }
+]
+
+[tool.setuptools]
+packages = ["trer", "trer.core"]
