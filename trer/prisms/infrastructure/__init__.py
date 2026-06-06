@@ -1,6 +1,17 @@
-"""Placeholder prism package.
+"""Infrastructure prism for dependency, maintenance, and pressure analysis."""
 
-This prism intentionally contains no runtime behavior yet. Add adapters only
-after the deterministic TRER core has fixture-backed tests for the behavior the
-prism needs.
-"""
+from .cdn import (
+    CriticalDependencyNode,
+    compute_pressure_mismatch_score,
+    enrich_pressure_score,
+    node_text_summary,
+    rank_flow_first,
+)
+
+__all__ = [
+    "CriticalDependencyNode",
+    "compute_pressure_mismatch_score",
+    "enrich_pressure_score",
+    "node_text_summary",
+    "rank_flow_first",
+]

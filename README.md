@@ -94,11 +94,11 @@ These demos should exercise the same core engine from different prism angles:
   - false-stop cost / missed P&L
   - post-event dissipation
 
-- **Building Failure Investigation**
-  - maintenance events
-  - inspections
-  - ownership changes
-  - rupture event
+- **Critical Dependency Observatory / CDN Index**
+  - high-flow civic/residential/industrial node discovery
+  - dependency, flow, consequence, and dissipation signals
+  - unresolved-pressure ranking without treating age as automatic risk
+  - later public-record enrichment and vector similarity search
 
 ## Current Test Gate
 

@@ -13,7 +13,7 @@ They should **not** become load-bearing dependencies of the core engine.
 - `market/` — Gamma Reflexivity-style price/news/options pressure timelines, including execution-decoupling simulations.
 - `inventory/` — Starbucks-style reconciliation, queue growth, and ambiguity routing.
 - `criminology/` — burglary-ring timelines, temporal linking, uncertainty scoring.
-- `infrastructure/` — Critical Dependency Observatory-style maintenance, inspection, ownership, and failure events.
+- `infrastructure/` — Critical Dependency Observatory / CDN indexing, unresolved-pressure ranking, maintenance, inspection, ownership, and failure events.
 - `narrative/` — human-readable explanations and investigation summaries.
 
 ## Boundary Rule
