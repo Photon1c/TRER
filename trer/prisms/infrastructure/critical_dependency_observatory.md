@@ -39,9 +39,11 @@ Building age is only a service-life context variable. It should not become a pri
 - **Dynamic flow density**: daily visitors, foot traffic, events, deliveries, transient use, service traffic.
 - **Consequence density**: people displaced, services interrupted, economic impact, regional dependency.
 - **Dissipation capacity**: maintenance, renovations, permits, repairs, management quality, redundancy.
-- **Pressure mismatch**: high flow + high dependency + weak/unknown dissipation.
+- **Criticality score**: flow × dependency × consequence, excluding dissipation.
+- **Pressure mismatch**: high flow + high dependency + high consequence minus visible dissipation.
+- **Pressure / dissipation confidence**: coarse confidence fields that keep uncertainty visible.
 
-Unknown dissipation should trigger enrichment; it should not automatically be treated as proven weakness.
+Unknown dissipation should trigger enrichment; it should not automatically be treated as proven weakness. High criticality with unknown dissipation is an investigation priority, not a failure prediction.
 
 ## Candidate Data Sources
 
@@ -81,12 +83,22 @@ Later public-record sources:
   "dynamic_flow_density": null,
   "consequence_density": null,
   "dissipation_capacity": null,
+  "criticality_score": null,
   "pressure_mismatch_score": null,
+  "pressure_confidence": "low | medium | high",
+  "dissipation_confidence": "low | medium | high",
   "review_count": null,
   "rating": null,
   "nearby_transit_count": null,
   "nearby_parking_count": null,
   "nearby_services_count": null,
+  "flow_sources": {
+    "google_reviews": null,
+    "nearby_transit": null,
+    "nearby_parking": null,
+    "nearby_services": null,
+    "estimated_visitors": null
+  },
   "known_public_records": [],
   "source_urls": [],
   "confidence": "low | medium | high"
@@ -114,11 +126,18 @@ Example structural query:
 2. Pull top candidate nodes from 8–10 categories.
 3. Deduplicate by `place_id`, name, and address.
 4. Generate 100–500 CDN packets.
-5. Rank by flow concentration first.
+5. Compare flow-first ranking against criticality-first ranking.
 6. Enrich top 25 with public records.
 7. Embed packets.
 8. Build similarity search.
 9. Compare FAISS vs turbovec/turboquant later.
+
+## Local Run Command
+
+```bash
+python3 -m trer.prisms.infrastructure.cdn tests/fixtures/infrastructure/dc_cdn_sample.json --rank flow
+python3 -m trer.prisms.infrastructure.cdn tests/fixtures/infrastructure/dc_cdn_sample.json --rank criticality
+```
 
 ## TRER Boundary
 
