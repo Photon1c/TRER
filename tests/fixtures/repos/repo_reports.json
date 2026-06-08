@@ -1,0 +1,83 @@
+[
+  {
+    "repo_name": "TRER",
+    "repo_url": "https://github.com/Photon1c/TRER",
+    "primary_language": "Python",
+    "last_commit_date": "2026-06-06",
+    "readme_quality_score": 0.72,
+    "issue_count": 0,
+    "open_pr_count": 0,
+    "dependency_count": 2,
+    "downstream_dependency_count": 3,
+    "complexity_score": 0.45,
+    "maintenance_activity_score": 0.85,
+    "notes": [
+      "foundational project",
+      "future dependency substrate",
+      "strategic",
+      "tests passing"
+    ],
+    "strategic_importance_score": 0.85,
+    "future_dependency_score": 0.75,
+    "foundational_project": true,
+    "architectural_importance_score": 0.9
+  },
+  {
+    "repo_name": "openclaw-workspace-main",
+    "repo_url": "file:///home/sherlockhums/.openclaw/workspace-main",
+    "primary_language": "Python",
+    "last_commit_date": "2026-06-06",
+    "readme_quality_score": 0.35,
+    "issue_count": 0,
+    "open_pr_count": 0,
+    "dependency_count": 18,
+    "downstream_dependency_count": 12,
+    "complexity_score": 0.7,
+    "maintenance_activity_score": 0.6,
+    "notes": [
+      "foundational project",
+      "internal only",
+      "many scripts",
+      "strategic"
+    ],
+    "strategic_importance_score": 0.9,
+    "future_dependency_score": 0.8,
+    "foundational_project": true,
+    "architectural_importance_score": 1.0
+  },
+  {
+    "repo_name": "old-reference-prototype",
+    "repo_url": "https://example.invalid/old-reference-prototype",
+    "primary_language": "HTML",
+    "last_commit_date": "2023-01-01",
+    "readme_quality_score": 0.8,
+    "issue_count": 0,
+    "open_pr_count": 0,
+    "dependency_count": 0,
+    "downstream_dependency_count": 0,
+    "complexity_score": 0.1,
+    "maintenance_activity_score": 0.0,
+    "notes": [
+      "reference prototype"
+    ],
+    "architectural_importance_score": 0.0
+  },
+  {
+    "repo_name": "underdocumented-busy-service",
+    "repo_url": "https://example.invalid/busy-service",
+    "primary_language": "JavaScript",
+    "last_commit_date": "2026-03-01",
+    "readme_quality_score": 0.15,
+    "issue_count": 12,
+    "open_pr_count": 3,
+    "dependency_count": 42,
+    "downstream_dependency_count": 8,
+    "complexity_score": 0.82,
+    "maintenance_activity_score": 0.25,
+    "notes": [
+      "needs tests",
+      "internal"
+    ],
+    "architectural_importance_score": 0.5
+  }
+]
