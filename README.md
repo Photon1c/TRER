@@ -105,3 +105,17 @@ These demos should exercise the same core engine from different prism angles:
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+---
+
+## Related Apps
+
+TRER is part of the [Systems Lab App Registry](~/docs/landing_zone/app-registry.md).
+
+| App | Relationship |
+|-----|-------------|
+| [Systems Lab Health Dashboard](~/.openclaw/workspace-main/tools/dashboard/) | TRER reconstruction outputs can feed the Lab Health tab for confidence/gap analysis |
+| [Nightwatchauton](../nightwatchauton/) | Shared observer layer; both visualize system state |
+| [Explorer Agents](~/.openclaw/workspace-main/tools/exploreragents/) | Scout scan data can feed TRER reconstruction prisms |
+| [Custodians](~/.openclaw/workspace-main/tools/custodians/) | Custodian health events can be reconstructed as temporal timelines |
+| [Security Guards](~/.openclaw/workspace-main/tools/securityguards/) | Security events are natural inputs for TRER's infrastructure prism |
